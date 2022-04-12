@@ -15,25 +15,25 @@ namespace ASP_NET_CORE_WEB_API.Lesson1
 
             private static readonly List<Task<Article>> myList = new List<Task<Article>>();
         
-            public static async Task Main(string[] args)
-            {
-                for (int i = 4; i < 14; i++)
-                {
-                    myList.Add(ProcessRepositories(i));
-                }
-            
-                await Task.WhenAll(myList);
-
-                using var writer = File.CreateText("../../Lesson1/result.txt");
-                myList.ForEach(el =>
-                {
-                    writer.WriteLine(el.Result.UserId);
-                    writer.WriteLine(el.Result.Id);
-                    writer.WriteLine(el.Result.Title);
-                    writer.WriteLine(el.Result.Body);
-                    writer.Write(writer.NewLine);
-                });
-            }
+            // public static async Task Main(string[] args)
+            // {
+            //     for (int i = 4; i < 14; i++)
+            //     {
+            //         myList.Add(ProcessRepositories(i));
+            //     }
+            //
+            //     await Task.WhenAll(myList);
+            //
+            //     using var writer = File.CreateText("../../Lesson1/result.txt");
+            //     myList.ForEach(el =>
+            //     {
+            //         writer.WriteLine(el.Result.UserId);
+            //         writer.WriteLine(el.Result.Id);
+            //         writer.WriteLine(el.Result.Title);
+            //         writer.WriteLine(el.Result.Body);
+            //         writer.Write(writer.NewLine);
+            //     });
+            // }
 
             private static async Task<Article> ProcessRepositories(int i)
             {
