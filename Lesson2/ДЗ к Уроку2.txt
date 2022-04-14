@@ -1,0 +1,69 @@
+'Contract'
+	Id
+	Name
+	Description
+	List<Task>
+	Client
+
+  	/api/contracts/
+		register  		POST
+		delete/{id} 	DELETE
+		update		PUT
+		getAll		GET
+		get/{id}		GET
+
+
+'Client'
+	Id
+	Name
+	
+	/api/clients/
+		register		POST
+		delete/{id}		DELETE
+		update		PUT
+		getAll		GET
+		get/{id}		GET
+		
+
+'Task'
+	Id
+	Description
+	Employee
+	Duration
+	
+	/api/task/
+		register		POST
+		delete/{id}		DELETE
+		update		PUT
+		getAll		GET
+		get/{id}		GET
+
+
+'Employee'
+	Id
+	Name
+	HourlyRate
+
+	api/employee/
+		register		POST
+		delete/{id}		DELETE
+		update		PUT
+		getAll		GET
+		get/{id}		GET
+
+	
+'Invoice'
+	Id
+	DateTime date	
+	Contract
+
+	api/invoice/
+		register		POST
+		delete/{id}		DELETE
+		update		PUT
+		getAll		GET
+		get/{id}		GET
+		getByClient/{id}	GET
+
+	
+
